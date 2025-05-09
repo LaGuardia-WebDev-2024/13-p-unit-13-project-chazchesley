@@ -1,15 +1,15 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Two Different jQuery Animation Methods 
+[ yes ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
-[ no ] Feature 4 - :hover Feature 
+[ yes ] Feature 4 - :hover Feature 
 [ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
@@ -21,17 +21,29 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <div class="bizzy">
+      <p class="bizzy-letters letter-b">c</p>
+      <p class="bizzy-letters letter-i">h</p>
+      <p class="bizzy-letters letter-z1">a</p>
+      <p class="bizzy-letters letter-z2">Z</p>
+    </div>
+
+    <div class="bizzy-B">
+      <p class="bizzy-letters-B letter-C">q</p>
+      <p class="bizzy-letters-B letter-O">u</p>
+      <p class="bizzy-letters-B letter-D">i</p>
+      <p class="bizzy-letters-B letter-I">z</p>
+    </div>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 What is my favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">The Talented Mr Ripley</option>
+          <option value="movie2">Wild at Heart</option>
+          <option value="movie3">Call me by Your Name</option>
+          <option value="movie4">Lock, Stock, and Two Smoking Barrels</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
@@ -43,10 +55,10 @@ Select ONE Additional Feature to Add
       <label>
         📖 What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">The Stranger</option>
+          <option value="book2">Giovanis Room</option>
+          <option value="book3">Call me by Your Name</option>
+          <option value="book4">In the Dream House</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -61,10 +73,14 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        $("#movie-result").hide(1000,function(){
+          $("#movie-result").slideDown(3000);
+        });
+        
+        if (answer === "movie3") {
+          $("#movie-result").text("YES!");
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-result").text("no");
         }
       });
 
@@ -74,11 +90,13 @@ Select ONE Additional Feature to Add
 
         var $answer = $("#book-answer");
         var answer = $answer.val();
-
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+ $("#book-result").hide(1000,function(){
+          $("#book-result").slideDown(3000);
+        });
+        if (answer === "book2") {
+          $("#book-result").text("YES!");
         } else {
-          $("#book-result").text("Try Again!");
+          $("#book-result").text("no");
         }
       });
     </script>
