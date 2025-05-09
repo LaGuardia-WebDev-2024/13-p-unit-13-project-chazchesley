@@ -73,15 +73,14 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        $("#movie-result").hide(1000,function(){
+        $("#movie-result").hide(1000, function () {
           $("#movie-result").slideDown(3000);
+          if (answer === "movie3") {
+            $("#movie-result").text("YES!");
+          } else {
+            $("#movie-result").text("no");
+          }
         });
-        
-        if (answer === "movie3") {
-          $("#movie-result").text("YES!");
-        } else {
-          $("#movie-result").text("no");
-        }
       });
 
       //Book Question jQuery Code
@@ -90,15 +89,17 @@ Select ONE Additional Feature to Add
 
         var $answer = $("#book-answer");
         var answer = $answer.val();
- $("#book-result").hide(1000,function(){
+        
+        $("#book-result").hide(1000, function () {
           $("#book-result").slideDown(3000);
-        });
-        if (answer === "book2") {
+           if (answer === "book2") {
           $("#book-result").text("YES!");
         } else {
           $("#book-result").text("no");
         }
-      });
+          });
+           });
+
     </script>
   </body>
 
